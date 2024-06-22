@@ -1,0 +1,8 @@
+# Justin Ventura | Jun 21, 2024
+
+# virtual env
+venv/
+
+# Python bytecodes
+*.pyc
+__pycache__/
