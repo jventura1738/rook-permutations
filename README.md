@@ -10,15 +10,23 @@ Prerequisites:
 
 To setup this project:
 
-1. Clone the repo `git clone https://github.com/jventura1738/rook-permutations.git`. Note that you likely don't have access, you can email me at justinventura.tech@gmail.com for access to the repository. Otherwise, you can just skip this step.
+1. Clone the repo `git clone https://github.com/jventura1738/rook-permutations.git`. Note that you likely don't have access, you can email me at justinventura.tech@gmail.com for access to the repository. Otherwise, you can just skip this step
 2. Navigate into the project dir `cd rook-permutations`
 3. Create a python virtual environment `python -m venv venv`
 4. Activate it `source venv/bin/activate`
 5. Install the requirements `pip install -r requirements.txt`
 
-## Running:
+## Running the CLI app:
 
-To run the project:
+To run the CLI:
+
+```bash
+python main.py
+```
+
+## Running the Flask API:
+
+You should open this in another terminal. Assuming you have successfully completed installation, run:
 
 ```bash
 python main.py
@@ -38,6 +46,11 @@ pytest
 pre-commit run --all-files
 ```
 
+### Troubleshooting:
+
+1. If `python` doesn't work, try `python3`.  You can also alias this in your bash/zsh profile
+2. Make sure you run each of the above commands from the root directory
+
 ## Future work
 
-Having a dockerized container would be nice for portability, hopefully can get to this. If not by the deadline, will be nice to have in general.
+Having a dockerized container would be nice for portability, hopefully can get to this. If not by the deadline, will be nice to have in general

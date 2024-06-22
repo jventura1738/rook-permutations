@@ -1,9 +1,14 @@
+blinker==1.8.2
 cfgv==3.4.0
 click==8.1.7
 distlib==0.3.8
 filelock==3.15.3
+Flask==3.0.3
 identify==2.5.36
 iniconfig==2.0.0
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==2.1.5
 mypy-extensions==1.0.0
 nodeenv==1.9.1
 packaging==24.1
@@ -14,3 +19,4 @@ pre-commit==3.7.1
 pytest==8.2.2
 PyYAML==6.0.1
 virtualenv==20.26.3
+Werkzeug==3.0.3
