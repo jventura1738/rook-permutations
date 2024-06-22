@@ -29,7 +29,13 @@ python main.py
 You should open this in another terminal. Assuming you have successfully completed installation, run:
 
 ```bash
-python main.py
+python app.py
+```
+
+You can try a request with curl:
+
+```bash
+curl -X POST http://127.0.0.1:5000/solve -H "Content-Type: application/json" -d '{"rooks": [[0, 0]]}'
 ```
 
 ### Dev:
