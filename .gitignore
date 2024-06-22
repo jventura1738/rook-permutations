@@ -6,3 +6,6 @@ venv/
 # Python bytecodes
 *.pyc
 __pycache__/
+
+# datafiles for personal use
+data/
