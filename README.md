@@ -2,11 +2,20 @@
 
 by Justin Ventura
 
+## Features:
+
+1. CLI using my pysolver to solve rook permutations problem
+2. Flask API to provide a RESTful interface to the pysolver
+3. Serverside caching and pagination of solutions to improve UX
+4. React client to interact with the API and display solutions beautifully
+
 ## Installation:
 
 Prerequisites:
+
 1. Have Python installed, preferably version >=3.11
 2. You can check your version using `python --version`
+3. Have pip and npm installed
 
 To setup this project:
 
@@ -91,6 +100,18 @@ Which should output:
 ]
 ```
 
+## Running the client:
+
+After starting the Flask API, you can run the client with:
+
+```bash
+npm i && npm start
+```
+
+Omit the `npm i` if you've already installed the dependencies. This will open a browser window with the client.
+
+You can begin to click on the board to place rooks, and then click the solve button to see the solutions!
+
 ### Dev:
 
 **Testing:** To run verification of the pysolver, ensure you've been able to successfully install, then run:
@@ -107,9 +128,11 @@ pre-commit run --all-files
 
 ### Troubleshooting:
 
-1. If `python` doesn't work, try `python3`.  You can also alias this in your bash/zsh profile
+1. If `python` doesn't work, try `python3`. You can also alias this in your bash/zsh profile
 2. Make sure you run each of the above commands from the root directory
+3. If you have any issues, please email me at justinventura.tech at gmail
 
 ## Future work
 
-Having a dockerized container would be nice for portability, hopefully can get to this. If not by the deadline, will be nice to have in general
+1. Having a dockerized container would be nice for portability, hopefully can get to this. If not by the deadline, will be nice to have in general
+2. A button to clear the board would be nice
