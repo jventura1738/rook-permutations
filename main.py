@@ -63,7 +63,7 @@ def run_main_demo(file_redirect, rook: str) -> None:
 
 def run_partial_demo(file_redirect, rook: str) -> None:
     solver = Solver(rchar=rook)
-    print("Enter the rook locations as row, col separated by a space.")
+    print("\nEnter the rook locations as row, col separated by a space.")
     print("Example: 0 0 1 1 2 2")
     print("Press enter to solve.")
     rooks = []
@@ -81,7 +81,6 @@ def run_partial_demo(file_redirect, rook: str) -> None:
     solver.set_rooks(set(rooks))
     solutions = solver.solve_board()
     if file_redirect:
-        # Create if it doesnt exist:
         outdir = "data/out.txt"
         os.makedirs(os.path.dirname(outdir), exist_ok=True)
         original_stdout = sys.stdout

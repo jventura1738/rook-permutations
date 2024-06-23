@@ -21,7 +21,7 @@ To setup this project:
 
 1. Clone the repo `git clone https://github.com/jventura1738/rook-permutations.git`. Note that you likely don't have access, you can email me at justinventura.tech@gmail.com for access to the repository. Otherwise, you can just skip this step
 2. Navigate into the project dir `cd rook-permutations`
-3. Create a python virtual environment `python -m venv venv`
+3. Create a python virtual environment `python3 -m venv venv`
 4. Activate it `source venv/bin/activate`
 5. Install the requirements `pip install -r requirements.txt`
 
@@ -31,6 +31,114 @@ To run the CLI:
 
 ```bash
 python main.py
+```
+
+Example usage:
+
+```
+python3 main.py                                                                                                    ─╯
+Welcome to Justin's Rook Permutation solver and simulator CLI!
+Press ctrl+c to quit at any time.
+
+Do you see a rook -> ♜? y/n
+> y
+Got it, using ♜
+
+
+What would you like to see?
+  1 -> Demo all possible rook permutations on a blank 8x8 board
+  2 -> Try on a partial board
+  q -> Quit
+> 2
+
+Would you like to send this to a file?
+> n
+
+Enter the rook locations as row, col separated by a space.
+Example: 0 0 1 1 2 2
+Press enter to solve.
+> 0 0 1 1 2 2 4 4 7 7
+
+> Solution 1
+ ----------------
+|♜ . . . . . . . |
+|. ♜ . . . . . . |
+|. . ♜ . . . . . |
+|. . . ♜ . . . . |
+|. . . . ♜ . . . |
+|. . . . . ♜ . . |
+|. . . . . . ♜ . |
+|. . . . . . . ♜ |
+ ----------------
+
+> Solution 2
+ ----------------
+|♜ . . . . . . . |
+|. ♜ . . . . . . |
+|. . ♜ . . . . . |
+|. . . ♜ . . . . |
+|. . . . ♜ . . . |
+|. . . . . . ♜ . |
+|. . . . . ♜ . . |
+|. . . . . . . ♜ |
+ ----------------
+
+> Solution 3
+ ----------------
+|♜ . . . . . . . |
+|. ♜ . . . . . . |
+|. . ♜ . . . . . |
+|. . . . . ♜ . . |
+|. . . . ♜ . . . |
+|. . . ♜ . . . . |
+|. . . . . . ♜ . |
+|. . . . . . . ♜ |
+ ----------------
+
+> Solution 4
+ ----------------
+|♜ . . . . . . . |
+|. ♜ . . . . . . |
+|. . ♜ . . . . . |
+|. . . . . ♜ . . |
+|. . . . ♜ . . . |
+|. . . . . . ♜ . |
+|. . . ♜ . . . . |
+|. . . . . . . ♜ |
+ ----------------
+
+> Solution 5
+ ----------------
+|♜ . . . . . . . |
+|. ♜ . . . . . . |
+|. . ♜ . . . . . |
+|. . . . . . ♜ . |
+|. . . . ♜ . . . |
+|. . . ♜ . . . . |
+|. . . . . ♜ . . |
+|. . . . . . . ♜ |
+ ----------------
+
+> Solution 6
+ ----------------
+|♜ . . . . . . . |
+|. ♜ . . . . . . |
+|. . ♜ . . . . . |
+|. . . . . . ♜ . |
+|. . . . ♜ . . . |
+|. . . . . ♜ . . |
+|. . . ♜ . . . . |
+|. . . . . . . ♜ |
+ ----------------
+
+
+What would you like to see?
+  1 -> Demo all possible rook permutations on a blank 8x8 board
+  2 -> Try on a partial board
+  q -> Quit
+> q
+
+Goodbye :)
 ```
 
 ## Running the Flask API:
