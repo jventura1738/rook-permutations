@@ -6,6 +6,10 @@ venv/
 # Python bytecodes
 *.pyc
 __pycache__/
+.pytest_cache/
 
 # datafiles for personal use
 data/
+
+# node_modules
+node_modules/

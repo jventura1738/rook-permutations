@@ -44,6 +44,7 @@ class Solver:
 
     # NOTE: does not set rooks, just for visualization
     def place_rooks(self, locations: List[Location]) -> bool:
+        self.clear_board()
         for r, c in locations:
             if not self.is_valid_placement(r, c):
                 self.clear_board()
@@ -69,16 +70,22 @@ class Solver:
         return True
 
     def solve_board(self) -> List[Set[Location]]:
-        if len(self.rooks) == self.bsize:
-            return [self.rooks.copy()]
-
         solutions = []
-        start_row = len(self.rooks)
-
-        for c in range(self.bsize):
-            if self.is_valid(start_row, c):
-                self.rooks.add((start_row, c))
-                solutions.extend(self.solve_board())
-                self.rooks.remove((start_row, c))
-
+        self._solve(0, solutions)
         return solutions
+
+    def _solve(self, row: int, solutions: List[Set[Location]]) -> None:
+        if row == self.bsize:
+            solutions.append(self.rooks.copy())
+            return
+
+        # just skip any rows with rooks
+        if any(r == row for r, _ in self.rooks):
+            self._solve(row + 1, solutions)
+            return
+
+        for col in range(self.bsize):
+            if self.is_valid(row, col):
+                self.rooks.add((row, col))
+                self._solve(row + 1, solutions)
+                self.rooks.remove((row, col))

@@ -1,7 +1,9 @@
 from flask import Flask, jsonify, request
+from flask_cors import CORS
 from pysolver.solver import Solver
 
 app = Flask(__name__)
+CORS(app)
 
 
 @app.route("/")
@@ -13,7 +15,12 @@ def home():
 def solve():
     data = request.json
     if not data:
-        return jsonify({"error": "POST /solve bad request; missing 'rooks'"}), 400
+        return (
+            jsonify(
+                {"ierror": "POST /solve bad request", "error": "Missing 'rooks' data"}
+            ),
+            400,
+        )
 
     rooks = data.get("rooks", [])
 
@@ -21,7 +28,13 @@ def solve():
     success = solver.set_rooks(set(tuple(r) for r in rooks))
     if not success:
         return jsonify(
-            {"error": "POST /solve bad request; rooks must not be attacked"}, 400
+            {
+                "ierror": "POST /solve bad request",
+                "error": "Rooks must not attack each other",
+                "solutions": [],
+                "number_of_solutions": 0,
+            },
+            400,
         )
 
     solutions = solver.solve_board()

@@ -93,17 +93,36 @@ def test_solve_board_partial_solution(solver):
     assert len(solutions) > 0, "Partially filled board should have solutions"
     for solution in solutions:
         assert len(solution) == 8
-        rows = [r for r, c in solution]
-        cols = [c for r, c in solution]
+        rows = [r for r, _ in solution]
+        cols = [c for _, c in solution]
         assert len(set(rows)) == 8
         assert len(set(cols)) == 8
 
 
 def test_place_rooks_invalid(solver):
-    locations = [(0, 0), (0, 1)]
+    locations = {(0, 0), (0, 1)}
     success = solver.place_rooks(locations)
     assert success == False
     board = solver.get_default_board()
     assert all(
         cell == "." for row in board for cell in row
     ), "Board should be cleared after invalid placement"
+
+
+def test_missing_rook_middle(solver):
+    locations = {(i, i) for i in range(8)}
+    locations.remove((1, 1))
+    success = solver.set_rooks(locations)
+    assert success == True, "Non-attacking rooks should succeed"
+    solutions = solver.solve_board()
+    print(solutions)
+    assert len(solutions) == 1, "Partial board should have 1 solution"
+    assert (1, 1) in solutions[0], "Middle rook should be placed"
+
+
+def test_missing_rooks(solver):
+    locations = {(0, 0), (7, 1), (6, 2), (3, 3), (5, 5), (4, 7)}
+    success = solver.set_rooks(locations)
+    assert success == True, "Non-attacking rooks should succeed"
+    solutions = solver.solve_board()
+    assert len(solutions) == 2, "Partial board should have 2 solutions"

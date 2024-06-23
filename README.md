@@ -38,6 +38,59 @@ You can try a request with curl:
 curl -X POST http://127.0.0.1:5000/solve -H "Content-Type: application/json" -d '{"rooks": [[0, 0]]}'
 ```
 
+This output is probably huge, so you can try a smaller one:
+
+```bash
+curl -X POST http://127.0.0.1:5000/solve -H "Content-Type: application/json" -d '{"rooks": [[0, 0], [1,1], [2,2], [3,3], [4,4], [5,5], [6,6]]}'
+```
+
+Which should output:
+
+```bash
+[
+  {
+    "number_of_solutions": 1,
+    "solutions": [
+      [
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          7,
+          7
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          6,
+          6
+        ]
+      ]
+    ]
+  },
+  200
+]
+```
+
 ### Dev:
 
 **Testing:** To run verification of the pysolver, ensure you've been able to successfully install, then run:
