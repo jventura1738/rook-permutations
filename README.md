@@ -16,6 +16,7 @@ Prerequisites:
 1. Have Python installed, preferably version >=3.11
 2. You can check your version using `python --version`
 3. Have pip and npm installed
+4. Make sure you also have TypeScript installed
 
 To setup this project:
 
