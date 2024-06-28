@@ -245,3 +245,4 @@ pre-commit run --all-files
 
 1. Having a dockerized container would be nice for portability, hopefully can get to this. If not by the deadline, will be nice to have in general
 2. A button to clear the board would be nice
+3. (mostly) Hard coded for 8x8 board, would be cool to scale up/down
